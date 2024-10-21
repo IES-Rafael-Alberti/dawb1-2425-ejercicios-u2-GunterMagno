@@ -1,19 +1,15 @@
 
-def comprobar_contraseña(contraseña: str) -> bool:
-    contraseña_puesta = input("Introduce la contraseña: ")
-    if contraseña == contraseña_puesta:
-        return True
-    else:
-        return False
-
-
+def pedir_y_comprobar(contraseña):
+    contraseña_puesta = input("Introduce la contraseña: ").strip()
+    while contraseña != contraseña_puesta:
+        contraseña_puesta = input("Contraseña incorrecta, prueba de nuevo: ")
+    return True
 
 def main():
     contraseña = "aceituna"
-    if comprobar_contraseña(contraseña) == True:
+    if pedir_y_comprobar(contraseña) == True:
         print("Contraseña correcta")
-    else:
-        print("Contraseña incorrecta")
+
 
 if __name__=="__main__":
     main()
