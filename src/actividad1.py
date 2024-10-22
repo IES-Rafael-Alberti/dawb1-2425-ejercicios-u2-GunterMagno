@@ -1,19 +1,11 @@
 
-def comprobar_numero(valor):
-    if valor == float:
-        print("Dato incorrecto")
-        valor == False
-    elif valor == int:
-        valor == True
-    else:
-        print("Dato incorrecto")
-        valor == False
+def comprobar_numero(valor:str):
+    if valor.startswith("-"):
+        valor = valor[-1]
+    return valor.isdigit()
 
 
-def calcular_media():
-    pass
-
-
+def introducir_numero():
 
 def main():
     valor = None
