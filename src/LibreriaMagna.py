@@ -12,3 +12,12 @@ def comprobar_negativo(numero:str):
     if numero.startswith("-"):
         print("El numero es negativo intenta de nuevo: ")
         return None
+    
+
+
+
+def main():
+
+
+if __name__=="__main__":
+    main()
