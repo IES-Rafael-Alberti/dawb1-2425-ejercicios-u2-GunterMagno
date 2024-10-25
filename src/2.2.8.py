@@ -39,7 +39,7 @@ def triangulo(numero :int):
     for i in range(inicio, numero + 1, 2):
         cadena = str(i) + " " + cadena
         triangulo = triangulo + cadena + "\n"
-        print(triangulo)
+    print(triangulo)
 
 
 def main():
