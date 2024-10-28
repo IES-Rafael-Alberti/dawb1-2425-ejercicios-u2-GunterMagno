@@ -11,14 +11,14 @@ def preg_nom() -> str:
 def test_nom(nombre):
     try:
         str(nombre)
-        nombre = str(nombre).strip
+        nombre = str(nombre).strip().capitalize()
     except:
         print("Error, intentalo de nuevo")
 
 def preg_gen():
     genero = input("Dime tu genero: ")
     test_gen(genero)
-    while test_nom(genero) == False:
+    while test_gen(genero) == False:
         genero = preg_gen()
     return genero
 
@@ -27,13 +27,22 @@ def test_gen(genero):
         str(genero)
         genero = str(genero).strip().lower()
     except:
-
-
+        print("Sexno no valido. Ingresa hombre o mujer")
 
 def determinar_grupo(nombre, genero):
-    print(f"{nombre}, {genero}")
-
-
+    if genero == "mujer":
+        if nombre[0] < 'M':
+            print("Grupo A")
+        else:
+            print("Grupo B")
+    elif genero == "hombre":
+        if nombre[0] > "N":
+            print("Grupo A")
+        else:
+            print("Grupo B")
+    else:
+        print("Sexno no valido. Ingresa hombre o mujer")
+        genero = preg_gen()
 
 def main():
     nombre = preg_nom()
@@ -42,18 +51,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-
-    # arreglar
-    if genero == "mujer":
-            if nombre[0].upper() < 'M':
-                return "Grupo A"
-            else:
-                return "Grupo B"
-        elif sexo.lower() == 'hombre':
-            if nombre[0].upper() > 'N':
-                return "Grupo A"
-        else:
-            return "Grupo B"
-    except:
-        print("Sexo no valido. Ingresa hombre o mujer")
