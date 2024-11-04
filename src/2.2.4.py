@@ -1,25 +1,15 @@
-def par(numero) -> bool:
-    if numero % 2 == 0:
-        return True
-    elif numero % 2 == 1:
-        return False
-
-
-def comprobar_negativo(numero:str) -> str:
-    if numero.startswith("-"):
-        print("El numero es negativo intenta de nuevo: ")
-        return None
+#Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas.
 
 
 def comprobar_negativo(numero:str) -> str:
     if numero.startswith("-"):
         numero = numero[1:]
         return numero
-    
+    return numero
 
 def comprobar_numero(numero) -> bool:
     try:
-        float(numero)
+        int(numero)
     except ValueError:
         print("*Error*, intenta de nuevo.")
         return False
@@ -36,8 +26,15 @@ def main():
     numero = input("Dame un numero entero: ")
     while comprobar_numero(numero) == False:
         numero = input("Dame un numero valido: ")
+    numero = comprobar_negativo(numero)
+    numero = int(numero)
+    while numero > 0:
+        print(f"{numero}, ", end="")
+        numero -= 1
+    print(f"{numero}.", end="")
+
+            
 
 
 if __name__=="__main__":
     main()
-

@@ -10,7 +10,7 @@ def par(numero) -> bool:
 
 def comprobar_negativo(numero:str) -> str:
     if numero.startswith("-"):
-        numero = numero[:1]
+        numero = numero[1:]
         return numero
     return numero
 
@@ -38,7 +38,7 @@ def main():
     if par(numero) == True:
         numero = numero - 1
         while numero >= 0:
-                cadena = 
+                cadena = ####### ARREGLARRR #####
                 numero -= 2
                
                 print(f"{cadena}" ,end=" ")
