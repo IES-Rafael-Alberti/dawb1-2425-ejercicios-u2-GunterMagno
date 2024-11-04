@@ -27,11 +27,14 @@ def limpiar_consola():
 def main():
     limpiar_consola()
     numero = input("Dame un numero entero positivo: ")
+    while comprobar_numero(numero) == False:
+        numero = input("Dame un numero valido: ")
     suma_digitos = 0
     for digito in numero:
         suma_digitos += int(digito)
     print(f"{suma_digitos}")
 
+########### MI NO ENTENDER ENUNCIADO ####################
 
 if __name__=="__main__":
     main()
